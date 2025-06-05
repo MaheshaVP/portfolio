@@ -19,10 +19,10 @@ const Header = () => {
           grow as a developer."
         </p>
         <div className="header_cta">
-          <a href="#contact">Let's talk</a>
-          <a href="#portfolio">My work</a>
+          <a href="#contact" className="btn primary">Let's talk</a>
+          <a href="#portfolio" className="btn light">My work</a>
         </div>
-        <div className="header_social">
+        <div className="header_socials">
           {
             data.map(item => <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{item.icon}</a>)
           }
