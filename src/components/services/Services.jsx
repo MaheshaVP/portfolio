@@ -1,11 +1,9 @@
 import React from 'react'
-import './Skills.css'
+import './Services.css'
 
 const Services = () => {
   return (
-    <section id="services">
-        <h2>Services</h2>
-    </section>
+    <div>Services</div>
   )
 }
 

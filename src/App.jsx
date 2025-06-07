@@ -1,28 +1,26 @@
-import React from "react"
-import Navbar from './sections/navbar/Navbar';
-import Header from './sections/header/Header'
-import About from "./sections/about/About";
-import Portfolio from "./sections/portfolio/Portfolio";
-import FAQs from "./sections/faqs/FAQs";
-import Services from "./sections/skills/Skills";
-import Contact from "./sections/contact/Contact";
-import Footer from "./sections/footer/Footer";
-import FloatingNav from "./sections/floating-nav/FloatingNav";
+import React from 'react'
+import Header from './components/header/Header'
+import About from './components/about/About'
+import Experience from './components/experience/Experience'
+import Services from './components/services/Services'
+import Nav from './components/nav/Nav'
+import Portfolio from './components/portfolio/Portfolio'
+import Contact from './components/contact/Contact'
+import Footer from './components/footer/Footer'
 
 const App = () => {
   return (
-    <main>
-      <Navbar />
+    <>
       <Header />
+      <Nav />
       <About />
+      <Experience />
       <Services />
       <Portfolio />
-      <FAQs />
       <Contact />
       <Footer />
-      <FloatingNav />
-    </main>
+    </>
   )
 }
 
-export default App 
+export default App
