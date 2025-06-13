@@ -1,0 +1,30 @@
+.scrollup {
+  position: fixed;
+  right: 2.5rem;
+  bottom: -20%; /* Hidden by default */
+  background-color: transparent;
+  opacity: 0.8;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.4rem;
+  z-index: 1000;
+  transition: 0.4s;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.scrollup:hover {
+  color: var(--color-primary);
+}
+
+/* Show when scrolled */
+.show-scroll {
+  bottom: 3rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    .scrollup {
+        display: none;
+    }
+}

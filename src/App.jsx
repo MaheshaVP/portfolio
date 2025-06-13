@@ -7,7 +7,8 @@ import Nav from './components/nav/Nav'
 import Portfolio from './components/portfolio/Portfolio'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
-// import './index.css'
+import Scrollup from './components/scrollup/Scrollup'
+import Qualification from './components/qualification/Qualification'
 
 const App = () => {
   return (
@@ -15,11 +16,13 @@ const App = () => {
       <Header />
       <Nav />
       <About />
+      <Qualification />
       <Experience />
       <Services />
       <Portfolio />
       <Contact />
       <Footer />
+      <Scrollup />
     </>
   )
 }

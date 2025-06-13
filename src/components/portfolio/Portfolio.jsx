@@ -1,6 +1,13 @@
 import React from "react";
 import "./Portfolio.css";
 import Img1 from "../../assets/projects/project1.png";
+import Img2 from "../../assets/projects/project2.png";
+import Img3 from "../../assets/projects/project3.png";
+import Img4 from "../../assets/projects/project4.png";
+import Img5 from "../../assets/projects/project5.png";
+import Img6 from "../../assets/projects/project6.png";
+
+
 
 const data = [
   {
@@ -13,40 +20,40 @@ const data = [
 
   {
     id: 2,
-    image: Img1,
-    title: "Gym Website",
+    image: Img2,
+    title: "Weather App",
     github: "https://github.com/maheshvp",
     demo: "https://github.com/maheshvp",
   },
 
   {
     id: 3,
-    image: Img1,
-    title: "Gym Website",
+    image: Img3,
+    title: "Fruits Store",
     github: "https://github.com/maheshvp",
     demo: "https://github.com/maheshvp",
   },
 
   {
     id: 4,
-    image: Img1,
-    title: "Gym Website",
+    image: Img4,
+    title: "Todo List",
     github: "https://github.com/maheshvp",
     demo: "https://github.com/maheshvp",
   },
 
   {
     id: 5,
-    image: Img1,
-    title: "Gym Website",
+    image: Img5,
+    title: "Coffee Shop",
     github: "https://github.com/maheshvp",
     demo: "https://github.com/maheshvp",
   },
 
   {
     id: 6,
-    image: Img1,
-    title: "Gym Website",
+    image: Img6,
+    title: "Education Institute",
     github: "https://github.com/maheshvp",
     demo: "https://github.com/maheshvp",
   },

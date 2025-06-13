@@ -1,80 +1,101 @@
-.experience_container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
-}
-
-.experience_container > div {
-    background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
+/* Section base */
+#experience {
     border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+  padding: 4rem 0;
+  background: var(--color-bg);
+  text-align: center;
 }
 
-.experience_container > div:hover {
-    background: transparent;
-    border-color: var(--color-bg-variant);
-    cursor: default;
+#experience h5 {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
-.experience_container > div h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-primary);
+#experience h2 {
+  color: var(--color-text);
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.experience_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
+/* Experience container */
+.experience_container {
+  display: flex;
+  justify-content: center;
 }
 
-.experience_details {
-    display: flex;
-    gap: 1rem;
+.experience_card {
+  background: var(--color-bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  width: 100%;
+  max-width: 1000px;
 }
 
-.experience-icon {
-    margin-top: 6px;
-    color: var(--color-primary);
+.experience_card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-
-/*============== Media Queries (Small Devices) ===============*/
-@media screen and (max-width: 1024px) {
-    .experience_container {
-        grid-template-columns: 1fr;
-    }
-
-    .experience_container > div {
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .experience_content {
-        padding: 1rem;
-    }
+.experience_card h3 {
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  font-weight: bold;
 }
 
-
-/*============== Media Queries (Small Devices) ===============*/
-@media screen and (max-width: 600px) {
-    #experience {
-        margin-top: 18rem;
-    }
-
-    .experience_container {
-        gap: 1rem;
-    }
-
-    .experience_container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-    }
+/* Grid */
+.experience_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
+/* Individual item */
+.experience_item {
+  background: var(--color-bg-variant);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
 
+.experience_item:hover {
+  background: var(--color-bg);
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+}
 
+/* Icon */
+.experience_icon {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
 
+/* Text */
+.experience_item h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.text-light {
+  font-size: 0.85rem;
+  color: var(--color-light);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .experience_card {
+    padding: 1.5rem;
+  }
+
+  .experience_grid {
+    grid-template-columns: 1fr;
+  }
+}
