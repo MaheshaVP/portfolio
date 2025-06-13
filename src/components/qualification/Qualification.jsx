@@ -14,7 +14,7 @@ const Qualification = () => {
             {/* Web Developer */}
             <div className="qualification_data">
               <div>
-                <h3 className="qualification_title">Web Developer</h3>
+                <h3 className="qualification_title">Java Full Stack</h3>
                 <span className="qualification_subtitle">
                   Nirmaan Organization
                 </span>
@@ -27,7 +27,7 @@ const Qualification = () => {
             {/* BCA */}
             <div className="qualification_data">
               <div>
-                <h3 className="qualification_title">BCA</h3>
+                <h3 className="qualification_title">Bachelor of Computer Applications</h3>
                 <span className="qualification_subtitle">
                   Nrupathunga University
                 </span>
@@ -40,7 +40,7 @@ const Qualification = () => {
             {/* PUC */}
             <div className="qualification_data">
               <div>
-                <h3 className="qualification_title">PUC</h3>
+                <h3 className="qualification_title">Pre-University Course (12th)</h3>
                 <span className="qualification_subtitle">
                   Govt PU College
                 </span>
@@ -53,7 +53,7 @@ const Qualification = () => {
             {/* SSLC */}
             <div className="qualification_data">
               <div>
-                <h3 className="qualification_title">SSLC</h3>
+                <h3 className="qualification_title">Secondary School Leaving Certificate (10th)</h3>
                 <span className="qualification_subtitle">
                   Govt High School
                 </span>

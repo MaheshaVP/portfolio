@@ -1,6 +1,5 @@
 import React from 'react';
 import './Experience.css';
-import { BsPatchCheckFill } from 'react-icons/bs';
 
 const skills = [
   "HTML", "CSS", "JavaScript", "React.js",
@@ -20,10 +19,8 @@ const Experience = () => {
           <div className="experience_grid">
             {skills.map((skill, index) => (
               <article key={index} className='experience_item'>
-                <BsPatchCheckFill className='experience_icon' />
                 <div>
                   <h4>{skill}</h4>
-                  <small className='text-light'>Experienced</small>
                 </div>
               </article>
             ))}
