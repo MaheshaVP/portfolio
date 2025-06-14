@@ -147,3 +147,36 @@
   }
 }
 
+/* 🔻 Mobile View Adjustments */
+@media screen and (max-width: 768px) {
+  .qualification_content::before {
+    left: 8px;
+    transform: none;
+  }
+
+  .qualification_data {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 2rem;
+  }
+
+  .qualification_data > div:first-child {
+    max-width: 100%;
+    border-left: 2px solid var(--color-primary) !important;
+    border-right: none !important;
+  }
+
+  .qualification_data:nth-child(even) > div:first-child {
+    border-left: 2px solid var(--color-primary);
+  }
+
+  .qualification_rounded {
+    left: 8px;
+  }
+
+  .qualification_line {
+    left: 8px;
+    transform: none;
+  }
+}

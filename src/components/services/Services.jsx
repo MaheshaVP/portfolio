@@ -1,80 +1,53 @@
-import React from 'react'
-import './Services.css'
+import React from 'react';
+import './Services.css';
+
+const softSkills = [
+  {
+    title: "Problem Solving",
+    description: "Quickly analyze and resolve issues in both frontend and backend code through logical thinking and debugging strategies."
+  },
+  {
+    title: "Team Collaboration",
+    description: "Work effectively in teams using Git and GitHub, contributing to shared codebases and coordinating in agile workflows."
+  },
+  {
+    title: "Communication",
+    description: "Explain technical concepts clearly and confidently to both technical and non-technical stakeholders."
+  },
+  {
+    title: "Time Management",
+    description: "Efficiently prioritize tasks, meet deadlines, and maintain a consistent learning and development pace."
+  },
+  {
+    title: "Continuous Learning",
+    description: "Proactively learning full-stack technologies and applying new knowledge by building real-world projects."
+  },
+  {
+    title: "Adaptability",
+    description: "Comfortable learning new tools, frameworks, and adapting to changing project requirements and environments."
+  },
+];
 
 const Services = () => {
   return (
     <section id='services'>
       <h2>Soft Skills</h2>
-
       <div className="container services_container">
-        <article className='service'>
-          <div className="service-head">
-            <h3>Problem Solving</h3>
-          </div>
-          <ul className="service-list">
-            <li>
-              <p>Able to analyze and debug issues efficiently in both frontend and backend code.</p>
-            </li>
-          </ul>
-        </article>
-
-        <article className='service'>
-          <div className="service-head">
-            <h3>Team Collaboration</h3>
-          </div>
-          <ul className="service-list">
-            <li>
-              <p>Able to analyze and debug issues efficiently in both frontend and backend code.</p>
-            </li>
-          </ul>
-        </article>
-
-        <article className='service'>
-          <div className="service-head">
-            <h3>Problem Solving</h3>
-          </div>
-          <ul className="service-list">
-            <li>
-              <p>Comfortable working in teams using version control (GitHub) and participating in collaborative projects.</p>
-            </li>
-          </ul>
-        </article>
-
-        <article className='service'>
-          <div className="service-head">
-            <h3>Communication </h3>
-          </div>
-          <ul className="service-list">
-            <li>
-              <p>Can clearly explain technical concepts and project ideas in a simple way.</p>
-            </li>
-          </ul>
-        </article>
-
-        <article className='service'>
-          <div className="service-head">
-            <h3>Time Management</h3>
-          </div>
-          <ul className="service-list">
-            <li>
-              <p>Balances learning, project work, and deadlines effectively.</p>
-            </li>
-          </ul>
-        </article>
-
-        <article className='service'>
-          <div className="service-head">
-            <h3>Continuous Learning</h3>
-          </div>
-          <ul className="service-list">
-            <li>
-              <p>Actively learning full-stack development and building real-world projects to improve skills.</p>
-            </li>
-          </ul>
-        </article>
+        {softSkills.map((skill, index) => (
+          <article className='service' key={index}>
+            <div className="service-head">
+              <h3>{skill.title}</h3>
+            </div>
+            <ul className="service-list">
+              <li>
+                <p>{skill.description}</p>
+              </li>
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

@@ -1,68 +1,97 @@
-
-.services_container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+/* Root container */
+#services {
+  padding: 4rem 0;
+  background: var(--color-bg);
+  color: var(--color-white);
+  text-align: center;
 }
 
+#services h2 {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+/* Grid container */
+.services_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+/* Each skill card */
 .service {
-    background: var(--color-bg-variant);
-    border-radius: 2rem;
-    border: 1px solid var(--color-primary);
-    transition: var(--transition);
-    padding: 1rem 1.5rem;
-    text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  height: 100%;
 }
 
 .service:hover {
-    background: transparent;
-    border-color: var(--primary-variant);
-    cursor: default;
-    background: var(--transparent);
-    /* color: black; */
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Heading inside card */
 .service-head h3 {
-    font-size: 1.5rem;
-    text-align: center;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
 }
 
-.service li p {
-    margin-top: 0.6rem;
-    font-size: 0.8rem;
+/* List inside card */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.service-list li {
+  margin-bottom: 0.5rem;
+}
 
+.service-list p {
+  color: var(--color-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 
-/*============== Media Queries (Small Devices) ===============*/
+/* 🔻 Medium screens (tablets) */
 @media screen and (max-width: 1024px) {
-    .services_container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .service {
-        height: auto;
-    }
-
+  .services_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: var(--container-width-md);
+  }
 }
 
-
-/*============== Media Queries (Small Devices) ===============*/
+/* 🔻 Small screens (mobiles) */
 @media screen and (max-width: 600px) {
-    #services {
-        margin-top: 20rem;
-    }
+  #services {
+    margin-top: 10rem;
+    height: max-content;
+  }
 
-    .services_container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+  .services_container {
+    grid-template-columns: 1fr;
+    width: var(--container-width-sm);
+  }
 
-    .service-head h3 {
-        font-size: 1rem;
-    }
+  .service {
+    padding: 1.2rem;
+  }
 
+  #services h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 }
-
-

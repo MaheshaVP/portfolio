@@ -1,3 +1,6 @@
+ #about {
+    height: max-content;
+}
 
 .about_container {
     display: grid;
@@ -87,9 +90,10 @@
 
 /*============== Media Queries (Small Devices) ===============*/
 @media screen and (max-width: 600px) {
+   
     .about_me {
         width: 65%;
-        margin: 0 auto 3rem;
+        margin: 0 auto ;
     }
 
     .about_cards {
