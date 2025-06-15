@@ -168,4 +168,8 @@
   .qualification_calender {
     font-size: 0.85rem;
   }
+
+  #qualification {
+    height: max-content;
+  }
 }

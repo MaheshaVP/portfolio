@@ -89,7 +89,8 @@
 /* 🔻 Small screens (600px and below) */
 @media screen and (max-width: 600px) {
   #services {
-    margin-top: 3rem;
+    height: max-content;
+    margin: 3rem 0 8rem 0;
     padding: 2rem 1rem;
   }
 

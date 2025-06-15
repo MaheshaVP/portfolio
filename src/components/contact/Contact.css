@@ -75,7 +75,7 @@ input, textarea {
 /*============== Media Queries (Small Devices) ===============*/
 @media screen and (max-width: 600px) {
     #contact {
-        margin-top: 115rem;
+        margin-top: 125rem;
         height: max-content;
     }
 

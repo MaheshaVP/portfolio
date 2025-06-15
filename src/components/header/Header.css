@@ -123,7 +123,7 @@ header {
 /*============== Media Queries (Small Devices) ===============*/
 @media screen and (max-width: 600px) {
   header {
-    height: 70vh;
+    height: 90vh;
   }
 
   .header_socials,
