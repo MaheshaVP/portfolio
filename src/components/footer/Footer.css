@@ -1,68 +1,100 @@
 footer {
-    background: var(--color-primary);
-    padding: 3rem 0;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 7rem;
+  background: var(--color-primary);
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 6rem;
+  color: var(--color-bg);
 }
 
 footer a {
-    color: var(--color-bg);
+  color: var(--color-bg);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+footer a:hover {
+  color: var(--color-white);
+}
+
+/* Logo */
 .footer_logo {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    display: inline-block;
-    letter-spacing: 2;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  letter-spacing: 1px;
 }
 
+/* Navigation Links */
 .footer_links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0 auto 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 0;
+  list-style: none;
 }
 
+.footer_links li a {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Social Icons */
 .footer_socials {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .footer_socials a {
-    font-size: 1.5rem;
-    background: var(--color-bg);
-    color: var(--color-white);
-    padding: 0.6rem;
-    border-radius: 0.7rem;
-    display: flex;
-    border: 1px solid transparent;
+  font-size: 1.4rem;
+  background: var(--color-bg);
+  color: var(--color-white);
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  display: flex;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .footer_socials a:hover {
-    background: transparent;
-    color: var(--color-bg);
-    border-color: var(--color-bg);
+  background: transparent;
+  color: var(--color-bg);
+  border-color: var(--color-bg);
 }
 
+/* Copyright */
 .footer_copyright {
-    margin-bottom: 2rem;
-    color: var(--color-bg);
+  font-size: 0.85rem;
+  color: var(--color-bg);
 }
 
+/* ====== Responsive: Mobile Devices ====== */
+@media screen and (max-width: 600px) {
+  .footer_links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
 
-/*============ media ============*/
-@media screen and (max-width: 600px){
-    .footer_links {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  .footer_socials {
+    margin-bottom: 2rem;
+  }
 
-    .footer_socials {
-        margin-bottom: 2.6rem;
-    }
+  .footer_logo {
+    font-size: 1.8rem;
+  }
+
+  .footer_socials a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  .footer_copyright {
+    font-size: 0.75rem;
+  }
 }

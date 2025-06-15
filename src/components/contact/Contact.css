@@ -1,7 +1,11 @@
 #contact {
-    margin-top: 100vh;
-    height: 100vh;
+    margin-top: 110vh;
+    height: max-content;
     overflow: hidden;
+}
+
+section h2 {
+    font-size: 2rem;
 }
 
 .container.contact_container {
@@ -50,7 +54,7 @@ form {
 
 input, textarea {
     width: 100%;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 0.5rem;
     background: transparent;
     border: 2px solid var(--color-primary-varient);
@@ -71,11 +75,15 @@ input, textarea {
 /*============== Media Queries (Small Devices) ===============*/
 @media screen and (max-width: 600px) {
     #contact {
-        margin-top: 130rem;
+        margin-top: 115rem;
         height: max-content;
     }
 
     .container.contact_container {
         width: var(--container-width-sm);
+    }
+
+    button {
+        margin-left: 30%;
     }
 }

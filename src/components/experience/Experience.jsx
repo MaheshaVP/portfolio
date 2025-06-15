@@ -1,16 +1,16 @@
-import React from 'react';
-import './Experience.css';
+import React from "react";
+import "./Experience.css";
 
-import HTML from '../../assets/skillslogo/html.png';
-import CSS from '../../assets/skillslogo/css.png';
-import JavaScript from '../../assets/skillslogo/javascript.png';
-import ReactLogo from '../../assets/skillslogo/react.png';
-import Bootstrap from '../../assets/skillslogo/bootstrap.png';
-import Tailwind from '../../assets/skillslogo/tailwind.png';
-import Restapi from '../../assets/skillslogo/api.png';
-import Json from '../../assets/skillslogo/json.png';
-import Python from '../../assets/skillslogo/python.png';
-import Mysql from '../../assets/skillslogo/mysql.png';
+import HTML from "../../assets/skillslogo/html.png";
+import CSS from "../../assets/skillslogo/css.png";
+import JavaScript from "../../assets/skillslogo/javascript.png";
+import ReactLogo from "../../assets/skillslogo/react.png";
+import Bootstrap from "../../assets/skillslogo/bootstrap.png";
+import Tailwind from "../../assets/skillslogo/tailwindcss.png";
+import Restapi from "../../assets/skillslogo/api.png";
+import Json from "../../assets/skillslogo/json.png";
+import Python from "../../assets/skillslogo/python.png";
+import Mysql from "../../assets/skillslogo/mysql.png";
 
 const skills = [
   { name: "HTML", logo: HTML, color: "#E34F26" },
@@ -27,7 +27,7 @@ const skills = [
 
 const Experience = () => {
   return (
-    <section id='experience'>
+    <section id="experience">
       <h5>What Skills I Have</h5>
       <h2>My Skills</h2>
 
@@ -37,9 +37,13 @@ const Experience = () => {
             <div
               key={index}
               className="experience_item"
-              style={{ '--hover-color': skill.color }}
+              style={{ "--hover-color": skill.color }}
             >
-              <img src={skill.logo} alt={skill.name} className="experience_logo" />
+              <img
+                src={skill.logo}
+                alt={skill.name}
+                className="experience_logo"
+              />
               <p className="experience_name">{skill.name}</p>
             </div>
           ))}

@@ -1,11 +1,13 @@
 /* Root container */
 #services {
+  margin-top: 10rem;
   padding: 4rem 0;
   background: var(--color-bg);
   color: var(--color-white);
   text-align: center;
 }
 
+/* Section title */
 #services h2 {
   color: var(--color-primary);
   font-size: 2.5rem;
@@ -31,6 +33,7 @@
   transition: all 0.3s ease;
   text-align: center;
   height: 100%;
+  min-width: 140px;
 }
 
 .service:hover {
@@ -48,7 +51,14 @@
   margin-bottom: 0.8rem;
 }
 
-/* List inside card */
+/* Icon styling */
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--color-white);
+  margin-bottom: 0.8rem;
+}
+
+/* Optional list styles */
 .service-list {
   list-style: none;
   padding: 0;
@@ -65,33 +75,52 @@
   line-height: 1.5;
 }
 
-/* 🔻 Medium screens (tablets) */
+
+
+/* 🔻 Medium screens (1024px and below) */
 @media screen and (max-width: 1024px) {
   .services_container {
     grid-template-columns: repeat(2, 1fr);
+    width: 90%;
     gap: 1.5rem;
-    width: var(--container-width-md);
   }
 }
 
-/* 🔻 Small screens (mobiles) */
+/* 🔻 Small screens (600px and below) */
 @media screen and (max-width: 600px) {
   #services {
-    margin-top: 10rem;
-    height: max-content;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
   }
 
   .services_container {
-    grid-template-columns: 1fr;
-    width: var(--container-width-sm);
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding: 0;
+    gap: 1rem;
   }
 
   .service {
-    padding: 1.2rem;
+    padding: 1rem;
+  }
+
+  .service-head h3 {
+    font-size: 1rem;
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
   }
 
   #services h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+/* 🔻 Extra-small screens (400px and below) */
+@media screen and (max-width: 400px) {
+  .services_container {
+    grid-template-columns: 1fr;
   }
 }

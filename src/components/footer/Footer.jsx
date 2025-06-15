@@ -33,11 +33,18 @@ const Footer = () => {
       </ul>
 
       <div className="footer_socials">
-        <a href="https://www.facebook.com/"><FaFacebookF /></a>
+        <a href="https://www.facebook.com/">
+          <FaFacebookF />
+        </a>
         <a href="https://www.linkedin.com/in/maheshavp/" target="blank">
           <BsLinkedin />
         </a>
-        <a href="https://github.com/MaheshaVP" target="blank">
+        <a
+          href="https://github.com/MaheshaVP"
+          target="_blank"
+          aria-label="GitHub"
+          rel="noopener noreferrer"
+        >
           <FaGithub />
         </a>
         <a href="https://www.instagram.com/__mahesh___03___/" target="blank">

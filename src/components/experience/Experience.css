@@ -1,5 +1,5 @@
 #experience {
-  margin-top: 15rem;
+  margin-top: 20rem;
   padding: 4rem 0;
   color: var(--color-white);
   text-align: center;
@@ -90,6 +90,12 @@
 
 /* 🔻 Small Devices (Mobile) */
 @media screen and (max-width: 600px) {
+  #experience {
+    height: max-content;
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
+
   .experience_container {
     width: var(--container-width-sm);
   }

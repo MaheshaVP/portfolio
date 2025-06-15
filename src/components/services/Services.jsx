@@ -1,48 +1,52 @@
-import React from 'react';
-import './Services.css';
+import React from "react";
+import "./Services.css";
+import {
+  FaLightbulb,
+  FaUsers,
+  FaComments,
+  FaClock,
+  FaBook,
+  FaSyncAlt,
+} from "react-icons/fa";
 
 const softSkills = [
   {
     title: "Problem Solving",
-    description: "Quickly analyze and resolve issues in both frontend and backend code through logical thinking and debugging strategies."
+    icon: <FaLightbulb className="service-icon" />,
   },
   {
     title: "Team Collaboration",
-    description: "Work effectively in teams using Git and GitHub, contributing to shared codebases and coordinating in agile workflows."
+    icon: <FaUsers className="service-icon" />,
   },
   {
     title: "Communication",
-    description: "Explain technical concepts clearly and confidently to both technical and non-technical stakeholders."
+    icon: <FaComments className="service-icon" />,
   },
   {
     title: "Time Management",
-    description: "Efficiently prioritize tasks, meet deadlines, and maintain a consistent learning and development pace."
+    icon: <FaClock className="service-icon" />,
   },
   {
     title: "Continuous Learning",
-    description: "Proactively learning full-stack technologies and applying new knowledge by building real-world projects."
+    icon: <FaBook className="service-icon" />,
   },
   {
     title: "Adaptability",
-    description: "Comfortable learning new tools, frameworks, and adapting to changing project requirements and environments."
+    icon: <FaSyncAlt className="service-icon" />,
   },
 ];
 
 const Services = () => {
   return (
-    <section id='services'>
+    <section id="services">
       <h2>Soft Skills</h2>
       <div className="container services_container">
         {softSkills.map((skill, index) => (
-          <article className='service' key={index}>
+          <article className="service" key={index}>
             <div className="service-head">
+              {skill.icon}
               <h3>{skill.title}</h3>
             </div>
-            <ul className="service-list">
-              <li>
-                <p>{skill.description}</p>
-              </li>
-            </ul>
           </article>
         ))}
       </div>

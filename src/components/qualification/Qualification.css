@@ -1,20 +1,23 @@
-/* Section Styles */
+#qualification {
+  margin-top: 5rem;
+}
+
 .qualification_section {
   padding: 2rem 1rem;
   background: var(--color-bg);
   color: var(--color-text);
+  margin-bottom: 4rem;
 }
 
 .section_title {
   text-align: center;
   color: var(--color-primary);
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   letter-spacing: 0.5px;
 }
 
-/* Container & Layout */
 .qualification_container {
   display: flex;
   justify-content: center;
@@ -31,7 +34,7 @@
   padding: 1rem 0;
 }
 
-/* Center vertical line */
+/* Center Vertical Line */
 .qualification_content::before {
   content: "";
   position: absolute;
@@ -48,34 +51,26 @@
 .qualification_data {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   position: relative;
   width: 100%;
-  padding: 0.8rem 0;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
+  padding: 1rem 0;
 }
 
 .qualification_data:nth-child(odd) {
   justify-content: flex-start;
 }
 
-.qualification_data:nth-child(1) { animation-delay: 0.2s; }
-.qualification_data:nth-child(2) { animation-delay: 0.4s; }
-.qualification_data:nth-child(3) { animation-delay: 0.6s; }
-.qualification_data:nth-child(4) { animation-delay: 0.8s; }
-
 /* Timeline Dot */
 .qualification_rounded {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background: var(--color-primary);
   border-radius: 50%;
   border: 2px solid var(--color-bg);
   position: absolute;
-  top: 50%;
+  top: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 2;
 }
 
@@ -87,8 +82,8 @@
   background: var(--color-primary);
   left: 50%;
   transform: translateX(-50%);
-  top: 12px;
-  z-index: 0;
+  top: 2.5rem;
+  z-index: 1;
 }
 
 /* Card Box */
@@ -101,25 +96,25 @@
   z-index: 2;
   max-width: 380px;
   transition: all 0.3s ease;
-  border-left: 2px solid var(--color-primary);
+  border-left: 3px solid var(--color-primary);
 }
 
 .qualification_data:nth-child(even) > div:first-child {
   border-left: none;
-  border-right: 2px solid var(--color-primary);
+  border-right: 3px solid var(--color-primary);
 }
 
 .qualification_data > div:first-child:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Text Styles */
 .qualification_title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .qualification_subtitle {
@@ -135,48 +130,42 @@
   font-style: italic;
 }
 
-/* Animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* 🔻 Mobile View Adjustments */
-@media screen and (max-width: 768px) {
-  .qualification_content::before {
-    left: 8px;
+/* Mobile View - Same side for all timeline cards */
+@media (max-width: 600px) {
+  .qualification_content::before,
+  .qualification_line,
+  .qualification_rounded {
+    left: 20px;
     transform: none;
   }
 
   .qualification_data {
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 2rem;
+    justify-content: flex-start !important;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
   }
 
   .qualification_data > div:first-child {
     max-width: 100%;
-    border-left: 2px solid var(--color-primary) !important;
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--color-primary);
     border-right: none !important;
   }
 
+  /* Force all divs to follow the same side (left aligned) */
   .qualification_data:nth-child(even) > div:first-child {
-    border-left: 2px solid var(--color-primary);
+    border-left: 3px solid var(--color-primary);
+    border-right: none;
   }
 
-  .qualification_rounded {
-    left: 8px;
+  .qualification_title {
+    font-size: 1rem;
   }
 
-  .qualification_line {
-    left: 8px;
-    transform: none;
+  .qualification_subtitle,
+  .qualification_calender {
+    font-size: 0.85rem;
   }
 }
