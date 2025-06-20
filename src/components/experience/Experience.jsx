@@ -1,5 +1,6 @@
 import React from "react";
 import "./Experience.css";
+import { motion } from "framer-motion";
 
 import HTML from "../../assets/skillslogo/html.png";
 import CSS from "../../assets/skillslogo/css.png";
@@ -25,19 +26,43 @@ const skills = [
   { name: "MySQL", logo: Mysql, color: "#00758F" },
 ];
 
+// New animation variant: zoom + rotate + fade
+const zoomRotateVariants = {
+  hidden: { opacity: 0, scale: 0.5, rotate: 90 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Experience = () => {
   return (
-    <section id="experience">
+    <motion.section
+      id="experience"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
       <h5>What Skills I Have</h5>
       <h2>My Skills</h2>
 
       <div className="container experience_container">
         <div className="experience_grid">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
               className="experience_item"
               style={{ "--hover-color": skill.color }}
+              variants={zoomRotateVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ delay: index * 0.15 }}
             >
               <img
                 src={skill.logo}
@@ -45,11 +70,11 @@ const Experience = () => {
                 className="experience_logo"
               />
               <p className="experience_name">{skill.name}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

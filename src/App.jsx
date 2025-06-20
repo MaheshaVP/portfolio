@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css"; // or App.css
 import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Experience from "./components/experience/Experience";
@@ -12,7 +13,7 @@ import Qualification from "./components/qualification/Qualification";
 
 const App = () => {
   return (
-    <>
+    <div style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh", overflowX: "hidden" }}>
       <Header />
       <Nav />
       <About />
@@ -23,7 +24,7 @@ const App = () => {
       <Contact />
       <Footer />
       <Scrollup />
-    </>
+    </div>
   );
 };
 

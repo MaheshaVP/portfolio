@@ -1,7 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./Qualification.css";
 
 const Qualification = () => {
+  const qualifications = [
+    {
+      title: "Java Full Stack",
+      subtitle: "Nirmaan Organization",
+      calendar: "2025 - Feb",
+    },
+    {
+      title: "Bachelor of Computer Applications",
+      subtitle: "Nrupathunga University",
+      calendar: "2021 - 2024",
+    },
+    {
+      title: "Pre-University Course (12th)",
+      subtitle: "Govt PU College",
+      calendar: "2019 - 2021",
+    },
+    {
+      title: "Secondary School Leaving Certificate (10th)",
+      subtitle: "Govt High School",
+      calendar: "2019",
+    },
+  ];
+
   return (
     <section
       id="qualification"
@@ -13,58 +37,28 @@ const Qualification = () => {
       <div className="qualification_container">
         <div className="qualification_sections">
           <div className="qualification_content">
-            {/* Web Developer */}
-            <div className="qualification_data">
-              <div>
-                <h3 className="qualification_title">Java Full Stack</h3>
-                <span className="qualification_subtitle">
-                  Nirmaan Organization
-                </span>
-                <div className="qualification_calender">2025 - Feb</div>
-              </div>
-              <span className="qualification_rounded"></span>
-              <span className="qualification_line"></span>
-            </div>
-
-            {/* BCA */}
-            <div className="qualification_data">
-              <div>
-                <h3 className="qualification_title">
-                  Bachelor of Computer Applications
-                </h3>
-                <span className="qualification_subtitle">
-                  Nrupathunga University
-                </span>
-                <div className="qualification_calender">2021 - 2024</div>
-              </div>
-              <span className="qualification_rounded"></span>
-              <span className="qualification_line"></span>
-            </div>
-
-            {/* PUC */}
-            <div className="qualification_data">
-              <div>
-                <h3 className="qualification_title">
-                  Pre-University Course (12th)
-                </h3>
-                <span className="qualification_subtitle">Govt PU College</span>
-                <div className="qualification_calender">2019 - 2021</div>
-              </div>
-              <span className="qualification_rounded"></span>
-              <span className="qualification_line"></span>
-            </div>
-
-            {/* SSLC */}
-            <div className="qualification_data">
-              <div>
-                <h3 className="qualification_title">
-                  Secondary School Leaving Certificate (10th)
-                </h3>
-                <span className="qualification_subtitle">Govt High School</span>
-                <div className="qualification_calender">2019</div>
-              </div>
-              <span className="qualification_rounded"></span>
-            </div>
+            {qualifications.map((item, index) => (
+              <motion.div
+                key={index}
+                className="qualification_data"
+                initial={{ x: index % 2 === 0 ? -150 : 150, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: false, amount: 0.3 }} // 👈 Animate every scroll
+              >
+                <div>
+                  <h3 className="qualification_title">{item.title}</h3>
+                  <span className="qualification_subtitle">
+                    {item.subtitle}
+                  </span>
+                  <div className="qualification_calender">{item.calendar}</div>
+                </div>
+                <span className="qualification_rounded"></span>
+                {index !== qualifications.length - 1 && (
+                  <span className="qualification_line"></span>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

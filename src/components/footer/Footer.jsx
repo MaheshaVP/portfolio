@@ -4,58 +4,85 @@ import { FaFacebookF } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer>
-      <a href="#" className="footer_logo">
+    <motion.footer
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.a
+        href="#"
+        className="footer_logo"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
         Portfolio
-      </a>
+      </motion.a>
 
       <ul className="footer_links">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-        <li>
-          <a href="#portfolio">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+        {["Home", "About", "Experience", "Projects", "Contact"].map((item, idx) => (
+          <motion.li
+            key={idx}
+            whileHover={{ scale: 1.1, color: "#00ffff" }}
+            transition={{ type: "spring", stiffness: 250 }}
+          >
+            <a href={item === "Home" ? "#" : `#${item.toLowerCase()}`}>{item}</a>
+          </motion.li>
+        ))}
       </ul>
 
       <div className="footer_socials">
-        <a href="https://www.facebook.com/">
+        <motion.a
+          href="https://www.facebook.com/"
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
           <FaFacebookF />
-        </a>
-        <a href="https://www.linkedin.com/in/maheshavp/" target="blank">
+        </motion.a>
+        <motion.a
+          href="https://www.linkedin.com/in/maheshavp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
           <BsLinkedin />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="https://github.com/MaheshaVP"
           target="_blank"
-          aria-label="GitHub"
           rel="noopener noreferrer"
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 200 }}
         >
           <FaGithub />
-        </a>
-        <a href="https://www.instagram.com/__mahesh___03___/" target="blank">
+        </motion.a>
+        <motion.a
+          href="https://www.instagram.com/__mahesh___03___/"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
           <FaInstagram />
-        </a>
+        </motion.a>
       </div>
 
-      <div className="footer_copyright">
+      <motion.div
+        className="footer_copyright"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+      >
         <small>&copy; {year} Mahesh portfolio. All rights reserved.</small>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 };
 

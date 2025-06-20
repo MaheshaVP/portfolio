@@ -11,8 +11,9 @@ const CTA = () => {
         className="btn"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
+        whileHover={{ scale: 1.05 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         Download CV
       </motion.a>
@@ -22,8 +23,9 @@ const CTA = () => {
         className="btn btn-primary"
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
+        whileHover={{ scale: 1.05 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         Let's Talk
       </motion.a>

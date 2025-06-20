@@ -34,7 +34,6 @@
   padding: 1rem 0;
 }
 
-/* Center Vertical Line */
 .qualification_content::before {
   content: "";
   position: absolute;
@@ -47,7 +46,6 @@
   z-index: 0;
 }
 
-/* Timeline Item */
 .qualification_data {
   display: flex;
   justify-content: flex-end;
@@ -60,7 +58,6 @@
   justify-content: flex-start;
 }
 
-/* Timeline Dot */
 .qualification_rounded {
   width: 14px;
   height: 14px;
@@ -74,7 +71,6 @@
   z-index: 2;
 }
 
-/* Connecting Line */
 .qualification_line {
   position: absolute;
   width: 2px;
@@ -86,7 +82,6 @@
   z-index: 1;
 }
 
-/* Card Box */
 .qualification_data > div:first-child {
   background: var(--color-bg);
   padding: 1rem 1.4rem;
@@ -109,7 +104,6 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Text Styles */
 .qualification_title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -130,8 +124,7 @@
   font-style: italic;
 }
 
-
-/* Mobile View - Same side for all timeline cards */
+/* Mobile View */
 @media (max-width: 600px) {
   .qualification_content::before,
   .qualification_line,
@@ -154,7 +147,6 @@
     border-right: none !important;
   }
 
-  /* Force all divs to follow the same side (left aligned) */
   .qualification_data:nth-child(even) > div:first-child {
     border-left: 3px solid var(--color-primary);
     border-right: none;

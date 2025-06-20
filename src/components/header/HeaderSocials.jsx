@@ -22,32 +22,37 @@ const HeaderSocials = () => {
       id: 0,
       href: "https://www.linkedin.com/in/maheshavp/",
       icon: <BsLinkedin />,
+      label: "LinkedIn",
     },
     {
       id: 1,
       href: "https://github.com/MaheshaVP",
       icon: <FaGithub />,
+      label: "GitHub",
     },
     {
       id: 2,
       href: "https://www.instagram.com/__mahesh___03___/",
       icon: <FaInstagram />,
+      label: "Instagram",
     },
   ];
 
   return (
     <div className="header_socials">
-      {socials.map(({ id, href, icon }) => (
+      {socials.map(({ id, href, icon, label }) => (
         <motion.a
           key={id}
           href={href}
+          aria-label={label}
           target="_blank"
           rel="noreferrer"
           custom={id}
           initial="hidden"
           whileInView="visible"
+          whileHover={{ scale: 1.2 }}
           variants={iconVariants}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.4 }}
         >
           {icon}
         </motion.a>

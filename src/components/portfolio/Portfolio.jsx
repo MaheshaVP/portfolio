@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import "./Portfolio.css";
 import Img1 from "../../assets/projects/project1.png";
 import Img2 from "../../assets/projects/project2.png";
@@ -6,7 +6,7 @@ import Img3 from "../../assets/projects/project3.png";
 import Img4 from "../../assets/projects/project4.png";
 import Img5 from "../../assets/projects/project5.png";
 import Img6 from "../../assets/projects/project6.png";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -58,36 +58,26 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.4,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 80 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.2,
       ease: "easeOut",
     },
   },
 };
 
 const Portfolio = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [inView, controls]);
-
   return (
-    <section id="portfolio" ref={ref}>
+    <section id="portfolio">
       <h5>My Recent Works</h5>
       <h2>Projects</h2>
 
@@ -95,7 +85,8 @@ const Portfolio = () => {
         className="container portfolio_container"
         variants={containerVariants}
         initial="hidden"
-        animate={controls}
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
       >
         {data.map(({ id, image, title, github, demo }) => (
           <motion.article
@@ -111,7 +102,12 @@ const Portfolio = () => {
               <a href={github} className="btn" target="_blank" rel="noreferrer">
                 GitHub
               </a>
-              <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">
+              <a
+                href={demo}
+                className="btn btn-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Go Live
               </a>
             </div>

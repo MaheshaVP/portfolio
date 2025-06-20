@@ -7,21 +7,22 @@ import { motion } from "framer-motion";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  whileInView: { opacity: 1, y: 0 },
   transition: { delay, duration: 0.6, ease: "easeOut" },
+  viewport: { once: false }, // 👈 triggers every time on scroll in
 });
 
 const Header = () => {
   return (
     <header>
       <div className="container header_container">
-        {/* Better Welcome Text Animation */}
+        {/* Welcome Text Animation */}
         <motion.h2
           className="welcome_text"
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }} // 👈 allow re-entry animation
         >
           Welcome to my Portfolio
         </motion.h2>
@@ -35,18 +36,18 @@ const Header = () => {
         <CTA />
         <HeaderSocials />
 
-        {/* Image Container */}
+        {/* Image Animation */}
         <motion.div
           className="me"
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }} // 👈 re-animates on scroll back in
         >
           <img src={ME} alt="My img" />
         </motion.div>
 
-        {/* Scroll Down Floating */}
+        {/* Scroll Down Text Bounce */}
         <motion.a
           href="#contact"
           className="scroll_down"

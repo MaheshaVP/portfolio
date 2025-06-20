@@ -3,6 +3,7 @@ import "./Contact.css";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiMessengerLine } from "react-icons/ri";
 import { FaWhatsapp } from "react-icons/fa6";
+import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -13,16 +14,16 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_n85dc4r", // ✅ Your EmailJS service ID
-        "template_n0thh0b", // ✅ Your EmailJS template ID
+        "service_n85dc4r",
+        "template_n0thh0b",
         form.current,
-        "sOiqgQ7Cqe2PHf3KS" // ✅ Your EmailJS user ID (public key for emailjs-com)
+        "sOiqgQ7Cqe2PHf3KS"
       )
       .then(
         (result) => {
           console.log("SUCCESS!", result.text);
           alert("Message sent successfully!");
-          e.target.reset(); // Optional: Reset form after submit
+          e.target.reset();
         },
         (error) => {
           console.error("FAILED...", error.text);
@@ -36,9 +37,21 @@ const Contact = () => {
       <h5>Get in Touch</h5>
       <h2>Contact Me</h2>
 
-      <div className="container contact_container">
+      <motion.div
+        className="container contact_container"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
         {/* Contact Options */}
-        <div className="contact_options">
+        <motion.div
+          className="contact_options"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <article className="contact_option">
             <AiOutlineMail className="contact_icon" />
             <h4>Email</h4>
@@ -77,10 +90,17 @@ const Contact = () => {
               Send a Message
             </a>
           </article>
-        </div>
+        </motion.div>
 
         {/* Contact Form */}
-        <form ref={form} onSubmit={sendEmail}>
+        <motion.form
+          ref={form}
+          onSubmit={sendEmail}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <input
             type="text"
             name="name"
@@ -97,8 +117,8 @@ const Contact = () => {
           <button type="submit" className="btn btn-primary">
             Send Message
           </button>
-        </form>
-      </div>
+        </motion.form>
+      </motion.div>
     </section>
   );
 };
